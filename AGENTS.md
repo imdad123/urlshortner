@@ -2,19 +2,19 @@
 
 ## Project Structure & Module Organization
 
-This repository currently contains project documentation only: `README.md` describes the planned URL shortener, and `PROJECT_REPORT.md` records its goals, proposed components, and milestones. Application source, tests, and assets have not been added yet. When implementation begins, keep the React client, Node.js API, and any tests in clearly named directories, and update the README with their locations and setup instructions.
+The React/Vite client lives in `frontend/`, the Express API in `backend/`, and API integration tests in `tests/`. `README.md` documents local setup and routes; `PROJECT_REPORT.md` records the project goals and milestones. Keep frontend and backend concerns in their respective directories and update the README when commands or API behavior change.
 
 ## Build, Test, and Development Commands
 
-There are no build, test, or run commands yet because the application and its tooling have not been implemented. Once dependencies and scripts are introduced, document the exact commands here and in `README.md` (for example, `npm install`, `npm run dev`, and `npm test`, only if those scripts exist).
+From the repository root, run `npm install` to install workspace dependencies, `npm run dev` to start both services, `npm run build` to build the frontend, and `npm test` to run API integration tests. `npm run dev:api` and `npm run dev:web` start one service at a time. The API uses port 3000 by default; `PORT` and frontend `VITE_API_BASE_URL` can be set for local configuration.
 
 ## Coding Style & Naming Conventions
 
-No language-specific style or formatter is configured yet. Follow the conventions of the selected React and Node.js toolchain when adding code. Use descriptive names, keep modules focused, and add formatting or linting configuration alongside the first implementation rather than relying on undocumented defaults.
+Use two-space indentation and descriptive component, function, and variable names. React components use PascalCase; files and utility functions use the existing lowercase/camelCase patterns. No formatter or linter is configured, so keep changes consistent with nearby code.
 
 ## Testing Guidelines
 
-No test framework or coverage target is configured. Add tests with the application features, use filenames that clearly identify the unit or behavior under test (for example, `redirect.test.js`), and document how to run the suite. Cover URL validation, short-code lookup, and redirect behavior as those features are implemented.
+Tests use Node's built-in `node:test` runner; files live in `tests/` and use the `*.test.js` suffix. Run the suite with `npm test`. Cover request validation, link creation, redirects, unknown codes, and API behavior when changing backend routes. No coverage threshold is configured.
 
 ## Commit & Pull Request Guidelines
 

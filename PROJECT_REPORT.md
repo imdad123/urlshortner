@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project will provide a web application that turns long destination URLs into short links. A visitor opening a short link will be redirected to the original destination. The planned client is React and the planned server is Node.js.
+This project provides a web application that turns long destination URLs into short links. A visitor opening a short link is redirected to the original destination. The client uses React and Vite; the API uses Node.js and Express.
 
 ## Goals
 
@@ -27,20 +27,17 @@ This project will provide a web application that turns long destination URLs int
 | React frontend | URL entry, validation feedback, and displaying the shortened link |
 | Node.js API | Link creation, input validation, and lookup endpoints |
 | Redirect handler | Resolve a short code and issue a redirect |
-| Database | Persist short-code and destination-URL mappings; selection is pending |
+| In-memory store | Keep short-code and destination-URL mappings for the lifetime of the API process |
 
 ## Current status
 
-The repository currently contains the initial project documentation. Application code, database choice, API framework, deployment setup, and automated checks have not yet been added.
+The MVP includes a responsive React interface, HTTP API, short-code generation, URL validation, redirects, health endpoint, and Node.js integration tests. Link mappings are held in memory and are lost when the API restarts. There is no database, authentication, analytics, or deployment configuration yet.
 
 ## Suggested implementation milestones
 
-1. Choose the API framework and database.
-2. Define the link data model and short-code generation approach.
-3. Implement link creation and redirect endpoints.
-4. Build the React form and result states.
-5. Add validation, error handling, and basic security protections.
-6. Document local setup and deployment after implementation.
+1. Select persistent storage and migrate short-link mappings.
+2. Add production deployment configuration and monitoring.
+3. Revisit abuse prevention, rate limits, and link lifecycle features before public deployment.
 
 ## Open decisions
 
